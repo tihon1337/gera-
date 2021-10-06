@@ -11,9 +11,9 @@ function Mypost() {
         <button>Add post</button>
       </div>
       <div className={s.post}>
-        <Post/>
-        <Post/>
-        <Post/>
+        <Post message='Hi a new massage'/>
+        <Post message='This seconde messange'/>
+        
       </div>
     </div>
   );

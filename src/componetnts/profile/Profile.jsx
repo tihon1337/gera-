@@ -5,7 +5,7 @@ import s from './Profile.module.css'
 
 function Profile() {
   return (
-    <div className={s.content}>
+    <div >
       <div>
         <img src="https://i.mycdn.me/i?r=AzEPZsRbOZEKgBhR0XGMT1RkAUnc0tFzFCa74FE2vO423aaKTM5SRkZCeTgDn6uOyic" />
       </div>
