@@ -1,18 +1,16 @@
 import React from "react";
 import Mypost from "./Mypost/Mypost";
-import s from './Profile.module.css'
+import s from "./Profile.module.css"
+import ProfileleInfo from "./ProfileleInfo/ProfileleInfo";
 
 
 function Profile() {
-  return (
-    <div >
-      <div>
-        <img src="https://i.mycdn.me/i?r=AzEPZsRbOZEKgBhR0XGMT1RkAUnc0tFzFCa74FE2vO423aaKTM5SRkZCeTgDn6uOyic" />
-      </div>
-      <div>ava + description</div>
-      <Mypost/>
-    </div>
-  );
+    return (
+        <div>
+            <ProfileleInfo/>
+            <Mypost/>
+        </div>
+    );
 }
 
 export default Profile;
