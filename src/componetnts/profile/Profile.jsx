@@ -4,11 +4,11 @@ import s from "./Profile.module.css"
 import ProfileleInfo from "./ProfileleInfo/ProfileleInfo";
 
 
-function Profile() {
+function Profile(props) {
     return (
         <div>
             <ProfileleInfo/>
-            <Mypost/>
+            <Mypost posts={props.posts}/>
         </div>
     );
 }
