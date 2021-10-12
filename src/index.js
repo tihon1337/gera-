@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
 import App from "./App";
+import state from "./Redux/state";
 
 let posts = [
     {id: 1, message: 'Hi a new massage', likesCount: 12},
@@ -27,5 +27,5 @@ let messages =
         {id: 5, message: 'yo'},
         {id: 6, message: 'yo'},
     ]
-ReactDOM.render(<App  posts={posts} dialogs={dialogs} messages={messages}/>,
+ReactDOM.render(<App  state={state}/>,
     document.getElementById("root"));

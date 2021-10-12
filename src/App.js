@@ -10,6 +10,7 @@ import Music from "./componetnts/Menu/Music/Music";
 
 
 import {BrowserRouter, Route} from "react-router-dom";
+import Frends from "./componetnts/Menu/Frends/Frends";
 
 function App(props) {
 
@@ -22,8 +23,10 @@ function App(props) {
                     <Route path='/music' render={() => <Music/>}/>
                     <Route path='/settings' render={() => <Settings/>}/>
                     <Route path='/news' render={() => <News/>}/>
-                    <Route path='/dialogs' render={() => <Dialogs dialogs={props.dialogs} messages={props.messages}/>}/>
-                    <Route path='/profile' render={() => <Profile posts={props.posts}/>}/>
+                    <Route path='/dialogs'
+                           render={() => <Dialogs state={props.state.messagesPage}/>}/>
+                    <Route path='/profile'
+                           render={() => <Profile state={props.state.profilePage}/>}/>
 
                 </div>
             </div>
