@@ -4,7 +4,7 @@ import s from "./Post.module.css";
 function Post(props) {
   return (
     <div className={s.item}>
-      <img src="https://yt3.ggpht.com/ytc/AAUvwng9fYEjvGGLK3xmj_fS8mGbDT8f0carGYgUVZU5=s900-c-k-c0x00ffffff-no-rj" />
+      <img src="https://cs4.pikabu.ru/post_img/big/2015/01/06/6/1420535289_1370983918.jpg" />
       {props.message}
       <div>
         <span>like</span>

@@ -26,7 +26,7 @@ function Navbar(props) {
                 <NavLink to="/settings" activeClassName={s.active}>Settings</NavLink>
             </div>
 
-            <div className={s.Frends}>
+            {/*<div className={s.Frends}>
                 <div className={s.frendsItem}>
                     <div className={s.Frends}>
                         <NavLink to="/frends" activeClassName={s.active}>Frends</NavLink>
@@ -34,10 +34,9 @@ function Navbar(props) {
                     <Route path='/frends' render={() => <Frends/>}/>
                     <Route path='/frends' render={() => <Frends/>}/>
                     <Route path='/frends' render={() => <Frends/>}/>
-                </div>
+                </div></div>
+*/}
 
-
-            </div>
 
 
         </nav>
