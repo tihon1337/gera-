@@ -31,16 +31,10 @@ let store = {
     _callSubscriber() {
         console.log('State changed');
     },
-
     getState() {
         return this._state
     },
-    subscribe(observe) {
-        this._callSubscriber = observe;
-
-    },
-
-    _addPost() {
+    addPost() {
         let newPost = {
             id: 5,
             message: this._state.profilePage.newPostText,
@@ -50,20 +44,15 @@ let store = {
         this._state.profilePage.newPostText = '';
         this._callSubscriber(this._state);
     },
-    _updateNewPostText(newText) {
+    updateNewPostText(newText) {
 
         this._state.profilePage.newPostText = newText;
         this._callSubscriber(this._state);
     },
-    dispatch(action) { // {type: 'ADD-POST'}
-        if(action.type === 'ADD-POST'){
-         this._addPost()
-        }
-        else if (action.type === 'UPDATE-NEW-POST'){
-           this._updateNewPostText(action.newText)
-        }
-    }
+    subscribe(observe) {
+        this._callSubscriber = observe;
 
+    }
 
 }
 export default store;
