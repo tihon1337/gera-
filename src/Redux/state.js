@@ -31,15 +31,14 @@ let store = {
     _callSubscriber() {
         console.log('State changed');
     },
-
     getState() {
         return this._state
     },
+
     subscribe(observe) {
         this._callSubscriber = observe;
 
     },
-
     _addPost() {
         let newPost = {
             id: 5,
@@ -55,14 +54,19 @@ let store = {
         this._state.profilePage.newPostText = newText;
         this._callSubscriber(this._state);
     },
+
     dispatch(action) { // {type: 'ADD-POST'}
         if(action.type === 'ADD-POST'){
-         this._addPost()
+            this._addPost()
         }
-        else if (action.type === 'UPDATE-NEW-POST'){
-           this._updateNewPostText(action.newText)
+        else if (action.type === 'UPDATE-NEW-POST-TEXT'){
+            this._updateNewPostText(action.newText)
         }
     }
+
+
+
+
 
 
 }
