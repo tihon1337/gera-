@@ -1,7 +1,7 @@
 import React from "react";
 import s from './ProfileleInfo.module.css'
 
-function ProfileleInfo() {
+function ProfileInfo() {
     return (
         <div >
 
@@ -15,4 +15,4 @@ function ProfileleInfo() {
     );
 }
 
-export default ProfileleInfo;
+export default ProfileInfo;
