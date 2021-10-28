@@ -4,7 +4,7 @@ import store from './Redux/origenal-redux/redux-store';
 import App from "./App";
 //import * as serviceWorker from './serviceWorker'
 import {BrowserRouter} from "react-router-dom";
-import  {Provider} from "./StoreContex";
+import {Provider} from "react-redux";
 
 
 let renderEntireTree = (state) => {
