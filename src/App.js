@@ -8,6 +8,7 @@ import Settings from "./componetnts/Menu/Settings/Settings";
 import Music from "./componetnts/Menu/Music/Music";
 import {BrowserRouter, Route} from "react-router-dom";
 import DialogsContainer from "./componetnts/Menu/Dialogs/DialogsContainer";
+import UsersContainer from "./componetnts/users/UsersContainer";
 
 
 function App(props) {
@@ -16,14 +17,13 @@ function App(props) {
             <div className="app-Wrapper">
                 <Header/>
                 <Navbar/>
+                {/*<Music/>
+                <Settings/>
+                <News/>*/}
                 <div className='app-Wrapper-content'>
-                    <Route path='/music' render={() => <Music/>}/>
-                    <Route path='/settings' render={() => <Settings/>}/>
-                    <Route path='/news' render={() => <News/>}/>
                     <Route path='/dialogs' render={() => <DialogsContainer  />}/>
                     <Route path='/profile' render={() => <Profile />}/>
-
-
+                    <Route path='/users' render={() => <UsersContainer /> }/>
                 </div>
             </div>
         </BrowserRouter>
