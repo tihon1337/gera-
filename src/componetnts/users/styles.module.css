@@ -4,4 +4,8 @@
   border-radius: 30px;
 }
 
+.selectedPage {
+  font-weight: bold;
+}
+
 /*# sourceMappingURL=styles.module.css.map */
