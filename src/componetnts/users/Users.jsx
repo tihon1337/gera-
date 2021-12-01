@@ -46,18 +46,12 @@ let Users = (props) => {
                         : <button onClick={()=>{
                             axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,{}, {
                                 withCredentials: true
-
                             })
                                 .then(response => {
                                     if (response.data.resultCode===0){
                                         props.follow(u.id)
                                     }
                                 });
-
-
-
-
-
 
                         }}>Follow</button>}
                     </div>
