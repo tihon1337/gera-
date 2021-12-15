@@ -3,6 +3,7 @@ import styles from "./styles.module.css";
 import userPhoto from "../../assets/94-943097_stockvader-predicted-adig-user-profile-image-png.png";
 import {NavLink} from "react-router-dom";
 import * as axios from "axios";
+import * as usersAPI  from "../../API/API";
 
 let Users = (props) => {
     let pageCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -33,9 +34,7 @@ let Users = (props) => {
                     {u.followed
                         ? <button disabled={props.followingInProgress.some(id=>id===u.id) } onClick={()=>{
                             props.toggleFollowingProgress(true, u.id)
-                            axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,{}, {
-                                withCredentials: true
-                            })
+                                usersAPI.unfollow(u.id)
                                 .then(response => {
                                     if (response.data.resultCode===0){
                                         props.follow(u.id)
@@ -47,9 +46,7 @@ let Users = (props) => {
                         }}>Unfollow</button>
                         : <button disabled={props.followingInProgress.some(id=>id===u.id)}  onClick={()=>{
                             props.toggleFollowingProgress(true, u.id)
-                            axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,{}, {
-                                withCredentials: true
-                            })
+                                 usersAPI.follow(u.id)
                                 .then(response => {
                                     if (response.data.resultCode===0){
                                         props.follow(u.id)
