@@ -3,7 +3,7 @@ import styles from "./styles.module.css";
 import userPhoto from "../../assets/94-943097_stockvader-predicted-adig-user-profile-image-png.png";
 import {NavLink} from "react-router-dom";
 import * as axios from "axios";
-import * as usersAPI  from "../../API/API";
+import  {usersAPI}  from "../../API/API";
 
 let Users = (props) => {
     let pageCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -32,29 +32,12 @@ let Users = (props) => {
                 <div>
 
                     {u.followed
-                        ? <button disabled={props.followingInProgress.some(id=>id===u.id) } onClick={()=>{
-                            props.toggleFollowingProgress(true, u.id)
-                                usersAPI.unfollow(u.id)
-                                .then(response => {
-                                    if (response.data.resultCode===0){
-                                        props.follow(u.id)
-                                    }
-                                    props.toggleFollowingProgress(false, u.id)
-                                });
-
-
-                        }}>Unfollow</button>
-                        : <button disabled={props.followingInProgress.some(id=>id===u.id)}  onClick={()=>{
-                            props.toggleFollowingProgress(true, u.id)
-                                 usersAPI.follow(u.id)
-                                .then(response => {
-                                    if (response.data.resultCode===0){
-                                        props.follow(u.id)
-                                    }
-                                    props.toggleFollowingProgress(false, u.id)
-                                });
-
-                        }}>Follow</button>}
+                        ? <button disabled={props.followingInProgress
+                            .some(id=>id===u.id) }
+                                  onClick={()=>{props.unfollow(u.id)}}>Unfollow</button>
+                        : <button disabled={props.followingInProgress
+                            .some(id=>id===u.id)}
+                                  onClick={()=>{props.follow(u.id)}}>Follow</button>}
                     </div>
                 </span>
                 <span>
